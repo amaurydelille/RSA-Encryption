@@ -68,5 +68,30 @@ let associated alphabet letter =
     | (x1, x2)::alpha -> if x1 = letter then x2
         else
           assoc alpha letter
-in assoc alphabet letter;;
+  in assoc alphabet letter;;
 
+(*function that returns the associated rank of each letter of the encrypted word*)
+let decompose word =
+  let rec decorec word i list =
+  while word <> "" do
+    (word.[i+1])::list
+  done
+  in decorec word 0 [];;
+
+decompose "caca";;
+
+let decompose word =
+  let rec decorec word i list =
+    match word with
+      ""   -> list
+    | word -> while word <> "" do
+                (word.[i])::list
+              done
+  in decorec word (i+1) [];;
+
+
+    
+
+
+        
+                    
